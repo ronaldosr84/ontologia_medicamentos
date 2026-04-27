@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl"
+         xmlns="http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl">
+  <owl:versionIRI rdf:resource="http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl/1.0.0"/>
+  <rdfs:comment xml:lang="pt-br">Ontologia de Medicamentos criada baseada na Ontologia Brasileira de Medicamentos</rdfs:comment>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#interageCom">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdfs:domain rdf:resource="#Principio_Ativo"/>
+  <rdfs:range rdf:resource="#Principio_Ativo"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#temAlergiaA">
+  <rdfs:domain rdf:resource="#Paciente"/>
+  <rdfs:range rdf:resource="#Principio_Ativo"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#temPrincipioAtivo">
+  <rdfs:domain rdf:resource="#Medicamento"/>
+  <rdfs:range rdf:resource="#Principio_Ativo"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usaMedicamento">
+  <rdfs:domain rdf:resource="#Paciente"/>
+  <rdfs:range rdf:resource="#Medicamento"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Apresentacao"/>
+
+<owl:Class rdf:about="#Contraindicacao"/>
+
+<owl:Class rdf:about="#InteracaoMedicamento"/>
+
+<owl:Class rdf:about="#Medicamento"/>
+
+<owl:Class rdf:about="#MedicamentoContraindicadoPorAlergia">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Medicamento"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#temPrincipioAtivo"/>
+          <owl:someValuesFrom>
+            <owl:Restriction>
+              <owl:onProperty>
+                <rdf:Description>
+                  <owl:inverseOf rdf:resource="#temAlergiaA"/>
+                </rdf:Description>
+              </owl:onProperty>
+              <owl:someValuesFrom rdf:resource="#Paciente"/>
+            </owl:Restriction>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#MedicamentosComRiscoDeInteracao">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Medicamento"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#temPrincipioAtivo"/>
+          <owl:someValuesFrom>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#interageCom"/>
+              <owl:someValuesFrom rdf:resource="#Principio_Ativo"/>
+            </owl:Restriction>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Paciente"/>
+
+<owl:Class rdf:about="#Principio_Ativo"/>
+
+<owl:Class rdf:about="#Produto_Medicinal_Comercial_(AMP)">
+  <rdfs:subClassOf rdf:resource="#Medicamento"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Produto_Medicinal_Comercial_com_Apresentacao_(AMPP)">
+  <rdfs:subClassOf rdf:resource="#Apresentacao"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Produto_Medicinal_Virtual_(VMP)">
+  <rdfs:subClassOf rdf:resource="#Medicamento"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Produto_Medicinal_Virtual_com_Apresentacao_(VMPP)">
+  <rdfs:subClassOf rdf:resource="#Apresentacao"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#alivium">
+  <temPrincipioAtivo rdf:resource="#ibuprofeno"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bromoprida"/>
+
+<owl:NamedIndividual rdf:about="#digesan">
+  <temPrincipioAtivo rdf:resource="#bromoprida"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#filha_Ronaldo">
+  <temAlergiaA rdf:resource="#bromoprida"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ibuprofeno">
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mae_Ronaldo">
+  <usaMedicamento rdf:resource="#alivium"/>
+  <usaMedicamento rdf:resource="#marivan"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#marivan">
+  <temPrincipioAtivo rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#varfarina">
+  <interageCom rdf:resource="#ibuprofeno"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#colecalciferol">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#addera_d3_50.000_unidades_internacionais_cápsula_(cosmed_indústria_de_cosméticos_e_medicamentos_s.a)_x_4_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#colecalciferol"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#addera_d3_7.000_unidades_internacionais_cápsula_(cosmed_indústria_de_cosméticos_e_medicamentos_s.a)_x_4_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#colecalciferol"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advil_400_mg_cápsula_(wyeth_indústria_farmacêutica_ltda)_x_16_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#ibuprofeno"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advil_400_mg_cápsula_(wyeth_indústria_farmacêutica_ltda)_x_8_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#ibuprofeno"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#anagrelida">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#agrylin_0,5_mg_cápsula_(ems_sigma_pharma_ltda)_x_100_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#anagrelida"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#formoterol_+_budesonida">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alenia_6_microgramas_+_100_microgramas_cápsula_para_inalação;_inalador_(biosintética_farmacêutica_ltda)_x_60_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#formoterol_+_budesonida"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alenia_6_microgramas_+_200_microgramas_cápsula_para_inalação_(aché_laboratórios_farmacêuticos_s.a.)_x_15_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#formoterol_+_budesonida"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alenia_6_microgramas_+_200_microgramas_cápsula_para_inalação_(aché_laboratórios_farmacêuticos_s.a.)_x_60_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#formoterol_+_budesonida"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#venlafaxina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alenthus_xr_150_mg_cápsula_de_liberação_prolongada_(medley_farmacêutica_ltda)_x_15_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#venlafaxina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alenthus_xr_150_mg_cápsula_de_liberação_prolongada_(medley_farmacêutica_ltda)_x_30_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#venlafaxina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alenthus_xr_37,5_mg_cápsula_de_liberação_prolongada_(medley_farmacêutica_ltda)_x_7_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#venlafaxina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alenthus_xr_75_mg_cápsula_de_liberação_prolongada_(medley_farmacêutica_ltda)_x_15_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#venlafaxina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alenthus_xr_75_mg_cápsula_de_liberação_prolongada_(medley_farmacêutica_ltda)_x_30_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#venlafaxina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alivium_400_mg_cápsula_(cosmed_industria_de_cosmeticos_e_medicamentos_s.a.)_x_10_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#ibuprofeno"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alivium_400_mg_cápsula_(cosmed_industria_de_cosmeticos_e_medicamentos_s.a.)_x_48_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#ibuprofeno"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alivium_400_mg_cápsula_(cosmed_industria_de_cosmeticos_e_medicamentos_s.a.)_x_96_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#ibuprofeno"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(aché_laboratórios_farmacêuticos_s.a)_x_15_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(aché_laboratórios_farmacêuticos_s.a)_x_30_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(aurobindo_pharma_indústria_farmacêutica_limitada)_x_140_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(aurobindo_pharma_indústria_farmacêutica_limitada)_x_21_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(aurobindo_pharma_indústria_farmacêutica_limitada)_x_350_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(biosintética_farmacêutica_ltda)_x_21_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(biosintética_farmacêutica_ltda)_x_30_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(brainfarma_indústria_química_e_farmacêutica_s.a)_x_15_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(brainfarma_indústria_química_e_farmacêutica_s.a)_x_21_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(eurofarma_laboratórios_s.a)_x_15_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(eurofarma_laboratórios_s.a)_x_60_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(laboratório_teuto_brasileiro_s/a)_x_100_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(laboratório_teuto_brasileiro_s/a)_x_15_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(laboratório_teuto_brasileiro_s/a)_x_500_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(medley_farmacêutica_ltda)_x_15_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(medley_farmacêutica_ltda)_x_21_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(multilab_indústria_e_comércio_de_produtos_farmacêuticos_ltda)_x_15_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(nova_quimica_farmacêutica_s/a)_x_21_cápsulas">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
