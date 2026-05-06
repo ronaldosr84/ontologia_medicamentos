@@ -32,13 +32,17 @@
   <rdfs:range rdf:resource="#Medicamento"/>
 </owl:ObjectProperty>
 
+<owl:Class rdf:about="#Principio_Ativo"/>
+
+<owl:Class rdf:about="#Paciente"/>
+
+<owl:Class rdf:about="#Medicamento"/>
+
 <owl:Class rdf:about="#Apresentacao"/>
 
 <owl:Class rdf:about="#Contraindicacao"/>
 
 <owl:Class rdf:about="#InteracaoMedicamento"/>
-
-<owl:Class rdf:about="#Medicamento"/>
 
 <owl:Class rdf:about="#MedicamentoContraindicadoPorAlergia">
   <owl:equivalentClass>
@@ -82,10 +86,6 @@
   </owl:equivalentClass>
 </owl:Class>
 
-<owl:Class rdf:about="#Paciente"/>
-
-<owl:Class rdf:about="#Principio_Ativo"/>
-
 <owl:Class rdf:about="#Produto_Medicinal_Comercial_(AMP)">
   <rdfs:subClassOf rdf:resource="#Medicamento"/>
 </owl:Class>
@@ -106,6 +106,12 @@
   <temPrincipioAtivo rdf:resource="#ibuprofeno"/>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#ibuprofeno">
+  <interageCom rdf:resource="#varfarina"/>
+  <temPrincipioAtivo rdf:resource="#ibuprofeno"/>
+  <interageCom rdf:resource="#diclofenaco"/>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#bromoprida"/>
 
 <owl:NamedIndividual rdf:about="#digesan">
@@ -116,8 +122,10 @@
   <temAlergiaA rdf:resource="#bromoprida"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#ibuprofeno">
-  <interageCom rdf:resource="#varfarina"/>
+<owl:NamedIndividual rdf:about="#varfarina">
+  <interageCom rdf:resource="#ibuprofeno"/>
+  <temPrincipioAtivo rdf:resource="#varfarina"/>
+  <interageCom rdf:resource="#acido_acetilsalicilico"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mae_Ronaldo">
@@ -127,10 +135,6 @@
 
 <owl:NamedIndividual rdf:about="#marivan">
   <temPrincipioAtivo rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#varfarina">
-  <interageCom rdf:resource="#ibuprofeno"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#colecalciferol">
@@ -231,6 +235,7 @@
 
 <owl:NamedIndividual rdf:about="#amoxicilina">
   <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#penicilina"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(aché_laboratórios_farmacêuticos_s.a)_x_15_cápsulas">
@@ -321,6 +326,114 @@
 <owl:NamedIndividual rdf:about="#amoxicilina_500_mg_cápsula_(nova_quimica_farmacêutica_s/a)_x_21_cápsulas">
   <rdf:type rdf:resource="#InteracaoMedicamento"/>
   <temPrincipioAtivo rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dipirona">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#dipirona"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#paracetamol">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#paracetamol"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#penicilina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#acido_acetilsalicilico">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#aspirina">
+  <rdf:type rdf:resource="#Medicamento"/>
+  <temPrincipioAtivo rdf:resource="#acido_acetilsalicilico"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#enalapril">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#enalapril"/>
+  <interageCom rdf:resource="#losartana"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#losartana">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#losartana"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#omeprazol">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#omeprazol"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#metformina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#metformina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#atorvastatina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#atorvastatina"/>
+  <interageCom rdf:resource="#sinvastatina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sinvastatina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#sinvastatina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#diclofenaco">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#diclofenaco"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fluoxetina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#fluoxetina"/>
+  <interageCom rdf:resource="#sertralina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sertralina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <temPrincipioAtivo rdf:resource="#sertralina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#maria_silva">
+  <rdf:type rdf:resource="#Paciente"/>
+  <usaMedicamento rdf:resource="#varfarina"/>
+  <usaMedicamento rdf:resource="#aspirina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#joao_santos">
+  <rdf:type rdf:resource="#Paciente"/>
+  <temAlergiaA rdf:resource="#penicilina"/>
+  <usaMedicamento rdf:resource="#amoxicilina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ana_costa">
+  <rdf:type rdf:resource="#Paciente"/>
+  <usaMedicamento rdf:resource="#losartana"/>
+  <usaMedicamento rdf:resource="#ibuprofeno"/>
+  <usaMedicamento rdf:resource="#enalapril"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#carlos_oliveira">
+  <rdf:type rdf:resource="#Paciente"/>
+  <usaMedicamento rdf:resource="#atorvastatina"/>
+  <usaMedicamento rdf:resource="#sinvastatina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#beatriz_lima">
+  <rdf:type rdf:resource="#Paciente"/>
+  <usaMedicamento rdf:resource="#fluoxetina"/>
+  <usaMedicamento rdf:resource="#sertralina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pedro_ferreira">
+  <rdf:type rdf:resource="#Paciente"/>
+  <usaMedicamento rdf:resource="#metformina"/>
+  <usaMedicamento rdf:resource="#omeprazol"/>
 </owl:NamedIndividual>
 
 
