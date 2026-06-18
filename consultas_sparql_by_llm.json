@@ -1,0 +1,54 @@
+{
+  "_descricao": "Catálogo de consultas SPARQL geradas pelo LLM. Cada entrada é registrada quando o usuário faz uma pergunta nova.",
+  "total": 6,
+  "entradas": [
+    {
+      "id": 1,
+      "pergunta": "Quais medicamentos contêm amoxicilina?",
+      "sparql": "PREFIX ont: <http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nSELECT ?med WHERE {\n  ?med rdf:type ont:Medicamento .\n  ?med ont:temPrincipioAtivo ont:amoxicilina .\n}",
+      "explicacao": "A query busca todos os medicamentos que contêm amoxicilina como princípio ativo, filtrando apenas aqueles que têm o tipo 'Medicamento'.",
+      "timestamp": "2026-06-18T01:34:40+00:00",
+      "reusada_de": null
+    },
+    {
+      "id": 2,
+      "pergunta": "Com o que a varfarina interage?",
+      "sparql": "PREFIX ont: <http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nSELECT ?nome WHERE {\n  ont:varfarina ont:interageCom ?pa .\n  BIND(REPLACE(STR(?pa), \".*#\", \"\") AS ?nome)\n}",
+      "explicacao": "A query busca todos os princípios ativos com os quais a varfarina interage, retornando seus nomes legíveis.",
+      "timestamp": "2026-06-18T01:34:49+00:00",
+      "reusada_de": null
+    },
+    {
+      "id": 3,
+      "pergunta": "Existe interação entre dipirona e ibuprofeno?",
+      "sparql": "PREFIX ont: <http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nASK {\n  ?pa1 a ont:Principio_Ativo .\n  ?pa1 ont:interageCom ont:ibuprofeno .\n  FILTER(REGEX(STR(?pa1), \"dipirona\", \"i\"))\n}",
+      "explicacao": "A query verifica se existe um princípio ativo que interage com o ibuprofeno, filtrando especificamente pelo nome 'dipirona'.",
+      "timestamp": "2026-06-18T01:34:58+00:00",
+      "reusada_de": null
+    },
+    {
+      "id": 4,
+      "pergunta": "tem algum remédio com dipirona aí?",
+      "sparql": "PREFIX ont: <http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nASK {\n  ?med rdf:type ont:Medicamento .\n  ?med ont:temPrincipioAtivo ?pa .\n  FILTER(REGEX(STR(?pa), \"dipirona\", \"i\"))\n}",
+      "explicacao": "A query verifica se existe algum medicamento que contém um princípio ativo cujo nome corresponda a 'dipirona'.",
+      "timestamp": "2026-06-18T01:35:05+00:00",
+      "reusada_de": null
+    },
+    {
+      "id": 5,
+      "pergunta": "Qual o princípio ativo da amoxicilina?",
+      "sparql": "PREFIX ont: <http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nSELECT ?nome WHERE {\n  ?med rdf:type ont:Medicamento .\n  ?med ont:temPrincipioAtivo ?pa .\n  FILTER(REGEX(STR(?med), \"amoxicilina\", \"i\")) .\n  BIND(REPLACE(STR(?pa), \".*#\", \"\") AS ?nome)\n}",
+      "explicacao": "A query busca medicamentos cujo nome contenha 'amoxicilina' e retorna os princípios ativos associados a esses medicamentos.",
+      "timestamp": "2026-06-18T01:59:15+00:00",
+      "reusada_de": null
+    },
+    {
+      "id": 6,
+      "pergunta": "Qual a posologia recomendada para crianças?",
+      "sparql": "PREFIX ont: <http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nSELECT ?med ?posologia WHERE {\n  ?med rdf:type ont:Medicamento .\n  ?med ont:posologiaCriancas ?posologia .\n  BIND(REPLACE(STR(?med), \".*#\", \"\") AS ?nome)\n}",
+      "explicacao": "A query busca todos os medicamentos que possuem informação de posologia para crianças através da propriedade ont:posologiaCriancas. No entanto, esta propriedade não está listada no schema fornecido, portanto a query não retornará resultados na ontologia atual.",
+      "timestamp": "2026-06-18T02:03:15+00:00",
+      "reusada_de": null
+    }
+  ]
+}
