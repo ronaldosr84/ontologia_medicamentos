@@ -1,0 +1,50 @@
+{
+  "medicamento": "MAREVAN",
+  "interacoes": {
+    "medicamentos_envolvidos": [
+      "cefamandol",
+      "eritromicina",
+      "fenformina",
+      "azapropazona",
+      "dipiridamol",
+      "cimetidina",
+      "amiodarona",
+      "cloranfenicol",
+      "oxifenilbutazona",
+      "fluconazol",
+      "hidrato de coral",
+      "clofibrato",
+      "feniramidol",
+      "benzafibrato",
+      "amitriptilina/nortriptilina",
+      "metronidazol",
+      "varfarina",
+      "feprazona",
+      "miconazol",
+      "fenilbutazona",
+      "cotrimoxazol",
+      "ciprofloxacino",
+      "neomicina",
+      "glucagon",
+      "destropropoxifeno",
+      "danazol",
+      "destrotiroxina",
+      "aztreonam"
+    ],
+    "riscos": [
+      "sangramento"
+    ],
+    "texto_bruto": "INTERAÇÕES MEDICAMENTOSAS\nInteração medicamento-medicamento\nDeve-se ter cuidado no uso em conjunto de qualquer fármaco em pacientes recebendo tratamento com\nanticoagulante oral.\n• A atividade da varfarina pode ser potencializada por esteroides anabólicos (como: etilestranol,\nmetandrostenolona, noretrandolona), amiodarona, amitriptilina/nortriptilina, azapropazona, aztreonam,\nbenzafibrato, cefamandol, cloranfenicol, hidrato de coral, cimetidina, ciprofloxacino, clofibrato,\ncotrimoxazol, danazol, "
+  },
+  "contraindicacoes": {
+    "alergenos": [
+      "varfarina"
+    ],
+    "riscos": [
+      "sangramento",
+      "hipertensão",
+      "alergia"
+    ],
+    "texto_bruto": "CONTRAINDICAÇÕES\n• Durante as primeiras 24 horas antes ou após cirurgia ou parto.\n• Gravidez, especialmente durante o primeiro trimestre, devido à possibilidade de má-formação fetal. A\nadministração a gestantes em estágios mais avançados está associada à hemorragia fetal e aumento na taxa\nde aborto.\n• Aborto incompleto.\n• Doenças hepáticas ou renais graves.\n• Hemorragias.\n• Hipertensão arterial grave não controlada.\n• Endocardite bacteriana.\n• Aneurisma cerebral ou aórtico.\n• Hemofilia.\n• Doença"
+  }
+}

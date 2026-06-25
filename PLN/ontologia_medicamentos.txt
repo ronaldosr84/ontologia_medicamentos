@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl"
+     versionIRI="http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl/1.0.0">
+    <Prefix name="" IRI="http://www.semanticweb.org/ronaldo/ontologies/2026/3/ontologia_medicamentos.owl/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="pt-br">Ontologia de Medicamentos criada baseada na Ontologia Brasileira de Medicamentos</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Apresentacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Contraindicacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InteracaoMedicamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Medicamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MedicamentoContraindicadoPorAlergia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MedicamentosComRiscoDeInteracao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Paciente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Principio_Ativo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Produto_Medicinal_Comercial_(AMP)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Produto_Medicinal_Comercial_com_Apresentacao_(AMPP)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Produto_Medicinal_Virtual_(VMP)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Produto_Medicinal_Virtual_com_Apresentacao_(VMPP)"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#interageCom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temAlergiaA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temPrincipioAtivo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usaMedicamento"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alivium"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#bromoprida"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#digesan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#filha_Ronaldo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ibuprofeno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mae_Ronaldo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#marivan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#varfarina"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#MedicamentoContraindicadoPorAlergia"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Medicamento"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temPrincipioAtivo"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectInverseOf>
+                        <ObjectProperty IRI="#temAlergiaA"/>
+                    </ObjectInverseOf>
+                    <Class IRI="#Paciente"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MedicamentosComRiscoDeInteracao"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Medicamento"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temPrincipioAtivo"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#interageCom"/>
+                    <Class IRI="#Principio_Ativo"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Produto_Medicinal_Comercial_(AMP)"/>
+        <Class IRI="#Medicamento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Produto_Medicinal_Comercial_com_Apresentacao_(AMPP)"/>
+        <Class IRI="#Apresentacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Produto_Medicinal_Virtual_(VMP)"/>
+        <Class IRI="#Medicamento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Produto_Medicinal_Virtual_com_Apresentacao_(VMPP)"/>
+        <Class IRI="#Apresentacao"/>
+    </SubClassOf>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temPrincipioAtivo"/>
+        <NamedIndividual IRI="#alivium"/>
+        <NamedIndividual IRI="#ibuprofeno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temPrincipioAtivo"/>
+        <NamedIndividual IRI="#digesan"/>
+        <NamedIndividual IRI="#bromoprida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temAlergiaA"/>
+        <NamedIndividual IRI="#filha_Ronaldo"/>
+        <NamedIndividual IRI="#bromoprida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#interageCom"/>
+        <NamedIndividual IRI="#ibuprofeno"/>
+        <NamedIndividual IRI="#varfarina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaMedicamento"/>
+        <NamedIndividual IRI="#mae_Ronaldo"/>
+        <NamedIndividual IRI="#alivium"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaMedicamento"/>
+        <NamedIndividual IRI="#mae_Ronaldo"/>
+        <NamedIndividual IRI="#marivan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temPrincipioAtivo"/>
+        <NamedIndividual IRI="#marivan"/>
+        <NamedIndividual IRI="#varfarina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#interageCom"/>
+        <NamedIndividual IRI="#varfarina"/>
+        <NamedIndividual IRI="#ibuprofeno"/>
+    </ObjectPropertyAssertion>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#interageCom"/>
+    </SymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#interageCom"/>
+        <Class IRI="#Principio_Ativo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temAlergiaA"/>
+        <Class IRI="#Paciente"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temPrincipioAtivo"/>
+        <Class IRI="#Medicamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usaMedicamento"/>
+        <Class IRI="#Paciente"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#interageCom"/>
+        <Class IRI="#Principio_Ativo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temAlergiaA"/>
+        <Class IRI="#Principio_Ativo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temPrincipioAtivo"/>
+        <Class IRI="#Principio_Ativo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usaMedicamento"/>
+        <Class IRI="#Medicamento"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

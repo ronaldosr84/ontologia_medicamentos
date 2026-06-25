@@ -1,0 +1,63 @@
+{
+  "profiles": {
+    "dev": {
+      "spacy_model": "pt_core_news_md",
+      "batch_size": 32,
+      "timeout": 30,
+      "max_retries": 2,
+      "backoff_seconds": 1.5,
+      "output_dir": "./out",
+      "data_dir": "./data",
+      "log_level": "DEBUG"
+    },
+    "prod": {
+      "spacy_model": "pt_core_news_lg",
+      "batch_size": 64,
+      "timeout": 60,
+      "max_retries": 5,
+      "backoff_seconds": 2.0,
+      "output_dir": "./out",
+      "data_dir": "./data",
+      "log_level": "INFO"
+    }
+  },
+  "active_profile": "dev",
+  "interacao_keywords": [
+    "intera(?:g|c|ç|c)[aã]o",
+    "interagir",
+    "potencializa",
+    "aumenta o efeito",
+    "diminui o efeito",
+    "efeito aditivo",
+    "efeito sinergico",
+    "sinergia",
+    "antagonismo",
+    "inibidor",
+    "indutor",
+    "substrato",
+    "cYP450"
+  ],
+  "medicamentos_conhecidos": [
+    "warfarina",
+    "dicumarol",
+    "fenitoína",
+    "carbamazepina",
+    "rifampicina",
+    "cimetidina",
+    "fluconazol",
+    "ketoconazol",
+    "amiodarona",
+    "digoxina",
+    "ciclosporina",
+    "tacrolimo",
+    "sirolimo",
+    "atorvastatina",
+    "simvastatina",
+    "omeprazol",
+    "clopidogrel",
+    "paracetamol",
+    "ibuprofeno",
+    "aspirina",
+    "aço"
+  ]
+}

@@ -1,0 +1,94 @@
+2026-06-24 14:00:57,784 [INFO] [setup] iniciando setup automático
+2026-06-24 14:00:57,786 [INFO] [setup] pacote pip já disponível
+2026-06-24 14:00:58,642 [INFO] [setup] pacote spacy já disponível
+2026-06-24 14:00:59,013 [INFO] [setup] pacote nltk já disponível
+2026-06-24 14:00:59,084 [INFO] [setup] pacote PyPDF2 já disponível
+2026-06-24 14:01:00,390 [INFO] [setup] pacote pandas já disponível
+2026-06-24 14:01:00,391 [INFO] [setup] NLTK resource punkt já disponível
+2026-06-24 14:01:00,392 [INFO] [setup] NLTK resource stopwords já disponível
+2026-06-24 14:01:02,397 [INFO] [setup] modelo spaCy pt_core_news_lg já disponível
+2026-06-24 14:01:02,398 [INFO] [setup] setup automático concluído
+2026-06-24 14:01:02,398 [INFO] [healthcheck] iniciando verificações
+2026-06-24 14:01:03,368 [INFO] [healthcheck] todas as verificações OK
+2026-06-24 14:01:03,368 [INFO] [pipeline] encontrados 3 PDFs em ./bulas/
+2026-06-24 14:01:03,368 [INFO] [pdf] extraindo texto de ./bulas\bula_1781111790931.pdf
+2026-06-24 14:01:03,709 [INFO] [pdf] extração OK de ./bulas\bula_1781111790931.pdf (30357 bytes)
+2026-06-24 14:01:03,711 [INFO] [nlp] carregando modelo spaCy pt_core_news_lg
+2026-06-24 14:01:04,766 [ERROR] [pipeline] erro ao processar ./bulas\bula_1781111790931.pdf: 
+**********************************************************************
+  Resource 'punkt_tab' not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  >>> import nltk
+  >>> nltk.download('punkt_tab')
+
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load 'tokenizers/punkt_tab/portuguese/'
+
+  Searched in:
+    - 'C:\\Users\\Ronaldo/nltk_data'
+    - 'C:\\Users\\Ronaldo\\OneDrive\\Área de Trabalho\\Doutorado\\Processamento Linguagem Natural\\ontologia_medicamentos\\.venv\\nltk_data'
+    - 'C:\\Users\\Ronaldo\\OneDrive\\Área de Trabalho\\Doutorado\\Processamento Linguagem Natural\\ontologia_medicamentos\\.venv\\share\\nltk_data'
+    - 'C:\\Users\\Ronaldo\\OneDrive\\Área de Trabalho\\Doutorado\\Processamento Linguagem Natural\\ontologia_medicamentos\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Ronaldo\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2026-06-24 14:01:04,767 [INFO] [pdf] extraindo texto de ./bulas\bula_1781739996501.pdf
+2026-06-24 14:01:05,559 [INFO] [pdf] extração OK de ./bulas\bula_1781739996501.pdf (89234 bytes)
+2026-06-24 14:01:05,569 [ERROR] [pipeline] erro ao processar ./bulas\bula_1781739996501.pdf: 
+**********************************************************************
+  Resource 'punkt_tab' not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  >>> import nltk
+  >>> nltk.download('punkt_tab')
+
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load 'tokenizers/punkt_tab/portuguese/'
+
+  Searched in:
+    - 'C:\\Users\\Ronaldo/nltk_data'
+    - 'C:\\Users\\Ronaldo\\OneDrive\\Área de Trabalho\\Doutorado\\Processamento Linguagem Natural\\ontologia_medicamentos\\.venv\\nltk_data'
+    - 'C:\\Users\\Ronaldo\\OneDrive\\Área de Trabalho\\Doutorado\\Processamento Linguagem Natural\\ontologia_medicamentos\\.venv\\share\\nltk_data'
+    - 'C:\\Users\\Ronaldo\\OneDrive\\Área de Trabalho\\Doutorado\\Processamento Linguagem Natural\\ontologia_medicamentos\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Ronaldo\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2026-06-24 14:01:05,569 [INFO] [pdf] extraindo texto de ./bulas\bula_1781744021221.pdf
+2026-06-24 14:01:05,801 [INFO] [pdf] extração OK de ./bulas\bula_1781744021221.pdf (29192 bytes)
+2026-06-24 14:01:05,807 [ERROR] [pipeline] erro ao processar ./bulas\bula_1781744021221.pdf: 
+**********************************************************************
+  Resource 'punkt_tab' not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  >>> import nltk
+  >>> nltk.download('punkt_tab')
+
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load 'tokenizers/punkt_tab/portuguese/'
+
+  Searched in:
+    - 'C:\\Users\\Ronaldo/nltk_data'
+    - 'C:\\Users\\Ronaldo\\OneDrive\\Área de Trabalho\\Doutorado\\Processamento Linguagem Natural\\ontologia_medicamentos\\.venv\\nltk_data'
+    - 'C:\\Users\\Ronaldo\\OneDrive\\Área de Trabalho\\Doutorado\\Processamento Linguagem Natural\\ontologia_medicamentos\\.venv\\share\\nltk_data'
+    - 'C:\\Users\\Ronaldo\\OneDrive\\Área de Trabalho\\Doutorado\\Processamento Linguagem Natural\\ontologia_medicamentos\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Ronaldo\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2026-06-24 14:01:05,808 [INFO] [export] JSON salvo em ./out/interacoes.json (0 registros)
+2026-06-24 14:01:05,810 [INFO] [export] RDF salvo em ./out/interacoes.ttl (0 registros)
+2026-06-24 14:01:05,810 [INFO] [export] HTML salvo em ./out/interacoes.html (0 registros)
+2026-06-24 14:01:05,811 [INFO] [report] relatório salvo em ./out/relatorio.html
+2026-06-24 14:01:05,811 [INFO] [pipeline] concluído. 0 interações extraídas.

@@ -134,7 +134,42 @@
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#marevan">
+  <rdf:type rdf:resource="#InteracaoMedicamento"/>
+  <temPrincipioAtivo rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cefamandol">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#eritromicina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fenformina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#azapropazona">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dipiridamol">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#cimetidina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#amiodarona">
   <rdf:type rdf:resource="#Principio_Ativo"/>
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
@@ -149,62 +184,7 @@
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#dipiridamol">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#neomicina">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#amiodarona">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#destrotiroxina">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#clofibrato">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#aztreonam">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#ciprofloxacino">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#destropropoxifeno">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#glucagon">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
 <owl:NamedIndividual rdf:about="#fluconazol">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#cotrimoxazol">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#feprazona">
   <rdf:type rdf:resource="#Principio_Ativo"/>
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
@@ -214,27 +194,12 @@
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#azapropazona">
+<owl:NamedIndividual rdf:about="#clofibrato">
   <rdf:type rdf:resource="#Principio_Ativo"/>
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#danazol">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#amitriptilina/nortriptilina">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#fenformina">
-  <rdf:type rdf:resource="#Principio_Ativo"/>
-  <interageCom rdf:resource="#varfarina"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#cefamandol">
+<owl:NamedIndividual rdf:about="#feniramidol">
   <rdf:type rdf:resource="#Principio_Ativo"/>
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
@@ -244,12 +209,17 @@
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#amitriptilina/nortriptilina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#metronidazol">
   <rdf:type rdf:resource="#Principio_Ativo"/>
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#eritromicina">
+<owl:NamedIndividual rdf:about="#feprazona">
   <rdf:type rdf:resource="#Principio_Ativo"/>
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
@@ -259,7 +229,42 @@
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#feniramidol">
+<owl:NamedIndividual rdf:about="#cotrimoxazol">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ciprofloxacino">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#neomicina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#glucagon">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#destropropoxifeno">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#danazol">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#destrotiroxina">
+  <rdf:type rdf:resource="#Principio_Ativo"/>
+  <interageCom rdf:resource="#varfarina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#aztreonam">
   <rdf:type rdf:resource="#Principio_Ativo"/>
   <interageCom rdf:resource="#varfarina"/>
 </owl:NamedIndividual>

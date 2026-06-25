@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Relatório de Extração de Interações</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 2em; color: #333; }
+h1, h2 { color: #2c3e50; }
+table { border-collapse: collapse; margin-bottom: 1.5em; min-width: 40%; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+th { background-color: #f2f2f2; }
+.ok { color: green; }
+.fail { color: red; }
+</style>
+</head>
+<body>
+<h1>Relatório de Extração de Interações Medicamentosas</h1>
+<p>Data/Hora: 2026-06-24T14:01:05.810846</p>
+<p>Total de interações extraídas: <strong>0</strong></p>
+
+<h2>Health Check</h2>
+<table>
+<<thead><tr><th>Item</th><th>Status</th></tr></thead>
+<tbody><<tr><td>input_dir</td><td>OK</td></tr>
+<<tr><td>output_dir</td><td>OK</td></tr>
+<<tr><td>data_dir</td><td>OK</td></tr>
+<<tr><td>pdfs</td><td>OK</td></tr>
+<<tr><td>spacy_model</td><td>OK</td></tr>
+<<tr><td>nltk</td><td>OK</td></tr>
+<<tr><td>pypdf2</td><td>OK</td></tr>
+<<tr><td>pandas</td><td>OK</td></tr></tbody>
+</table>
+
+<h2>Arquivos de Saída</h2>
+<ul>
+<li><a href="interacoes.json">JSON</a></li>
+<li><a href="interacoes.csv">CSV</a></li>
+<li><a href="interacoes.ttl">RDF/Turtle</a></li>
+<li><a href="interacoes.html">HTML</a></li>
+</ul>
+
+<h2>Distribuição por Severidade</h2>
+<table>
+<<thead><tr><th>Severidade</th><th>Quantidade</th></tr></thead>
+<tbody></tbody>
+</table>
+
+<h2>Distribuição por Tipo</h2>
+<table>
+<<thead><tr><th>Tipo</th><th>Quantidade</th></tr></thead>
+<tbody></tbody>
+</table>
+
+<h2>Interações por Arquivo</h2>
+<table>
+<<thead><tr><th>Arquivo</th><th>Quantidade</th></tr></thead>
+<tbody></tbody>
+</table>
+</body>
+</html>
