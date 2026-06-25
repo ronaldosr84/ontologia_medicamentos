@@ -1,1 +1,5 @@
 docs/portal-obm-20250530.sql
+.env
+.venv/
+__pycache__/
+*.pyc
